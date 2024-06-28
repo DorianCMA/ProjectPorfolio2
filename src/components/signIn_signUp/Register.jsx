@@ -51,7 +51,7 @@ const Register = ({ onToggle }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/signUp/",
+        "https://human-resourse-back-7m2juwgpe-dorians-projects-c73b6e92.vercel.app/signUp/",
         userData,
         {
           headers: {
