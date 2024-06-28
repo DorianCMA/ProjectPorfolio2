@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3004/auth/login", 
+        "http://localhost:3002/signUp/login/", 
         loginData
       );
       console.log(loginData);
@@ -42,9 +42,7 @@ const Login = () => {
         const token = response.data.token;
         const customer_id = response.data.customer_id;
         localStorage.setItem("token", token);
-        localStorage.setItem("customer_id", customer_id);
         setToken(token);
-        setCustomer_id(customer_id);
         navigate("/employees");
         console.log(response.data);
       }

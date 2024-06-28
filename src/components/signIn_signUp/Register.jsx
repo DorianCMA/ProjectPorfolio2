@@ -15,13 +15,14 @@ const Register = ({ onToggle }) => {
   });
 
   const handleToggle = () => {
-    // Llama a onToggle para notificar al componente padre que se desea cambiar de formulario
     if (onToggle) {
       onToggle();
     }
   };
+
   const [showPassword, setShowPassword] = useState(false);
   const { token } = useContext(AuthContext);
+  
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -38,13 +39,15 @@ const Register = ({ onToggle }) => {
     e.preventDefault();
 
     if (user.password !== user.confirm_password) {
-      console.error("Las contraseñas no coinciden");
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Las contraseñas no coinciden',
+      });
       return;
     }
 
     const { confirm_password, ...userData } = user;
-
-    console.log(confirm_password);
 
     try {
       const response = await axios.post(
@@ -69,7 +72,7 @@ const Register = ({ onToggle }) => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full ">
-      <div className=" hidden sm:block h-full overflow-hidden ">
+      <div className="hidden sm:block h-full overflow-hidden ">
         <img
           className="w-full h-full object-cover"
           src={loginImg}
@@ -86,7 +89,7 @@ const Register = ({ onToggle }) => {
             SIGN UP
           </h2>
           <div className="flex flex-col text-gray-400 py-2">
-            <label className="">User</label>
+            <label>User</label>
             <input
               className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
               type="text"
@@ -96,7 +99,7 @@ const Register = ({ onToggle }) => {
             />
           </div>
           <div className="flex flex-col text-gray-400 py-2">
-            <label className="">Email</label>
+            <label>Email</label>
             <input
               className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
               type="text"
@@ -108,7 +111,7 @@ const Register = ({ onToggle }) => {
           <div className="flex flex-col text-gray-400 py-2">
             <label>Password</label>
             <input
-              className=" rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
+              className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
               type={showPassword ? "text" : "password"}
               name="password"
               value={user.password}
@@ -118,7 +121,7 @@ const Register = ({ onToggle }) => {
           <div className="flex flex-col text-gray-400 py-2">
             <label>Confirm Password</label>
             <input
-              className=" rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
+              className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
               type={showPassword ? "text" : "password"}
               name="confirm_password"
               value={user.confirm_password}
@@ -128,7 +131,7 @@ const Register = ({ onToggle }) => {
           <div className="flex item-center text-gray-400 py-2">
             <input
               type="checkbox"
-              className=" mr-2"
+              className="mr-2"
               onChange={handleTogglePassword}
               checked={showPassword}
             />
@@ -158,6 +161,5 @@ const Register = ({ onToggle }) => {
 Register.propTypes = {
   onToggle: propTypes.func.isRequired,
 };
-
 
 export default Register;
