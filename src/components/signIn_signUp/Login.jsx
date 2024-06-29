@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://deploy-sand-mu.vercel.app/ProjectPorfolio2/signUp/login/", 
+        "https://deploy-sand-mu.vercel.app/signUp/login/", 
         loginData
       );
       console.log(loginData);
