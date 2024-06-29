@@ -51,7 +51,7 @@ const Register = ({ onToggle }) => {
 
     try {
       const response = await axios.post(
-        "deploy-sand-mu.vercel.app/signUp/",
+        "https://deploy-sand-mu.vercel.app/ProjectPorfolio2/signUp/",
         userData,
         {
           headers: {
