@@ -47,7 +47,7 @@ const ReprimandManagement = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3002/reprimend/",
+        "https://deploy-sand-mu.vercel.app/reprimend/",
         newReprimand,
         {
           headers: {
@@ -84,7 +84,7 @@ const ReprimandManagement = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3002/reprimend/${id}`, {
+          await axios.delete(`https://deploy-sand-mu.vercel.app/reprimend/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
               "Content-Type": "application/json",
@@ -108,7 +108,7 @@ const ReprimandManagement = () => {
     // console.log("token afuera de try",token)
     try {
      
-      const response = await axios.get("http://localhost:3002/reprimend/", {
+      const response = await axios.get("https://deploy-sand-mu.vercel.app/reprimend/", {
         headers: {
           Authorization: ` Bearer ${token}`,
           "Content-Type": "application/json",

@@ -51,7 +51,7 @@ const CreateUser = () => {
       });
 
       const response = await axios.post(
-        "http://localhost:3002/rrhh/",
+        "https://deploy-sand-mu.vercel.app/rrhh/",
         formDataWithImage,
         {
           headers: {

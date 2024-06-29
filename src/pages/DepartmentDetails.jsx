@@ -17,7 +17,7 @@ const DepartmentDetails = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3002/rrhh/", {
+      const response = await axios.get("https://deploy-sand-mu.vercel.app/rrhh/", {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json",

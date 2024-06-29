@@ -27,7 +27,7 @@ const DepartmentCreation = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/department/",
+        "https://deploy-sand-mu.vercel.app/department/",
         formData,
         {
           headers: {

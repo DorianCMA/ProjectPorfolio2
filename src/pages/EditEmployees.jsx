@@ -130,7 +130,7 @@ const EditEmployees = () => {
 
     try {
       await axios.patch(
-        `http://localhost:3002/rrhh/${employeeData._id}`,
+        `https://deploy-sand-mu.vercel.app/rrhh/${employeeData._id}`,
         updatedEmployeeData, {
         headers: {
           "Authorization": `Bearer ${token}`,

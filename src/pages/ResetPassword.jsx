@@ -37,7 +37,7 @@ const ResetPassword = ({ onCancel }) => {
         ""
       );
       console.log("token:" + token.split("/"));
-      const response = await axios.patch("http://localhost:3002/signUp/", {
+      const response = await axios.patch("https://deploy-sand-mu.vercel.app/signUp/", {
         newPassword: password,
         urlToken: token.split("/"),
       },

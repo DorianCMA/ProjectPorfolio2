@@ -45,7 +45,7 @@ const EditDepartment = () => {
 
     try {
       const response = await axios.patch(
-        `http://localhost:3002/department/${departmentData._id}`,
+        `https://deploy-sand-mu.vercel.app/department/${departmentData._id}`,
         updatedDepartmentData,
         {
           headers: {

@@ -48,7 +48,7 @@ const FaultManagement = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3002/fault",
+        "https://deploy-sand-mu.vercel.app/fault",
         newFaults,
         {
           headers: {
@@ -84,7 +84,7 @@ const FaultManagement = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3002/fault/${id}`, {
+          await axios.delete(`https://deploy-sand-mu.vercel.app/fault/${id}`, {
             headers: {
               "Authorization": `Bearer ${token}`,
               "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const FaultManagement = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3002/fault", {
+      const response = await axios.get("https://deploy-sand-mu.vercel.app/fault", {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json",

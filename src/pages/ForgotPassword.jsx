@@ -17,7 +17,7 @@ const ForgotPassword = ({ onCancel }) => {
   const handleForgotPassword = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3002/recoverpassword",
+        "https://deploy-sand-mu.vercel.app/recoverpassword",
         { email: email },
         {
           headers: {

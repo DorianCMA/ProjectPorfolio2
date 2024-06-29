@@ -47,7 +47,7 @@ const EmployeeDetails = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3002/reprimend/", {
+      const response = await axios.get("https://deploy-sand-mu.vercel.app/reprimend/", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -62,7 +62,7 @@ const EmployeeDetails = () => {
   };
   const fetchDataFaults = async () => {
     try {
-      const response = await axios.get("http://localhost:3002/fault/", {
+      const response = await axios.get("https://deploy-sand-mu.vercel.app/fault/", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

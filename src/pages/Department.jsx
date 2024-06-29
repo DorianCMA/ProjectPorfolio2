@@ -34,7 +34,7 @@ const Department = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3002/department/", {
+      const response = await axios.get("https://deploy-sand-mu.vercel.app/department/", {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const Department = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3002/department/${id}`, {
+          await axios.delete(`https://deploy-sand-mu.vercel.app/department/${id}`, {
             Headers: {
               "Authorization": `Bearer ${token}`,
               "Content-Type": "application/json",
